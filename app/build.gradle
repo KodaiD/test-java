@@ -41,3 +41,8 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+java {
+    sourceCompatibility=1.8
+    targetCompatibility=1.8
+}
