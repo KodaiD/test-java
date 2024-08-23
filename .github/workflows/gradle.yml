@@ -17,7 +17,7 @@ jobs:
   build-with-various-java:
     strategy:
       matrix:
-        version: [17, 21]
+        version: [11, 17, 21]
         vendor: ['corretto', 'microsoft', 'oracle', 'temurin']
     runs-on: ubuntu-latest
     permissions:
