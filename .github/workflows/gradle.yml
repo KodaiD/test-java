@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         version: [8, 11, 17, 21]
-        vendor: ['corretto', 'microsoft', 'temurin']
+        vendor: ['corretto', 'temurin']
     runs-on: ubuntu-latest
     permissions:
       contents: read
