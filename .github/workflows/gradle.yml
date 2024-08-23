@@ -14,7 +14,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-in-various-os:
+  build-with-various-java-version:
     strategy:
       matrix:
         version: [8, 11, 17]
@@ -37,70 +37,6 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
     
-  build-with-java8:
-
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 8 for x64
-      uses: actions/setup-java@v4
-      with:
-        java-version: '8'
-        distribution: 'temurin'
-        architecture: x64
-
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v4
-
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
-      
-  build-with-java11:
-
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 11 for x64
-      uses: actions/setup-java@v4
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        architecture: x64
-
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v4
-
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
-      
-  build-with-java17:
-
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17 for x64
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        architecture: x64
-
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v4
-
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
-
-
   dependency-submission:
 
     runs-on: ubuntu-latest
