@@ -32,12 +32,6 @@ jobs:
         distribution: ${{ matrix.vendor }}
         architecture: x64
 
-    - name: Set up JDK for Oracle
-      run: |
-        container_id=$(docker create "ghcr.io/scalar-labs/oracle/jdk:8-linux")
-        docker cp "$container_id:oracle-jdk.tar.gz" . && docker rm "$container_id"
-        tar -xzf oracle-jdk.tar.gz -C /usr/lib/jvm
-
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
 
