@@ -12,3 +12,4 @@ plugins {
 
 rootProject.name = 'test-java'
 include('app')
+include('app2')
